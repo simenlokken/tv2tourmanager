@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 )
 
 knitr::opts_knit$set(
-  root.dir = "C:/Users/simen/Desktop/tv2tourmanager"
+  root.dir = "C:/Users/simen/Desktop/tv2tourmanager/2024/"
 )
 ```
 
@@ -32,7 +32,7 @@ library(patchwork)
 
 # Load data
 
-data <- read_csv("2024/data/tourmanager_2023.csv")
+data <- read_csv("data/tourmanager_2023.csv")
 ```
 
 ```{r}

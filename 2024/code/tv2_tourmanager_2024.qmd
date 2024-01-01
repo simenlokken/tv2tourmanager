@@ -32,7 +32,7 @@ library(patchwork)
 
 # Load data
 
-data <- read_csv("data/tourmanager_2023.csv")
+data <- read_csv("2024/data/tourmanager_2023.csv")
 ```
 
 ```{r}
@@ -48,7 +48,20 @@ cleaned_data <- data |>
   select(
     player, rank, position, team, price, sprint_points,
     climb_points, placement_points, points
-  ) 
+  )
+
+# Change levels
+
+print(
+  levels(
+    cleaned_data$position
+  )
+)
+
+levels(cleaned_data$position) <- c(
+  "Kaptein", "Klatrer", "Sportsdirektør", "Spurter", 
+  "Hjelperytter", "Temporytter","Ungdomsrytter"
+)
 ```
 
 ## Analyses
@@ -78,7 +91,7 @@ top_15_abs <- cleaned_data |>
     x = "Poeng"
   ) +
   scale_x_continuous(
-    breaks = seq(1000, 2500, 250)
+    breaks = seq(1000, 2750, 250)
   ) +
   theme(
     panel.grid.minor = element_blank()
@@ -138,7 +151,7 @@ ggsave(
 
 mvp_abs <- cleaned_data |> 
   filter(
-    position != "Manager"
+    position != "Sportsdirektør"
   ) |> 
   group_by(position) |> 
   slice_max(
@@ -148,7 +161,7 @@ mvp_abs <- cleaned_data |>
 
 mvp_rel <- cleaned_data |> 
   filter(
-    position != "Manager"
+    position != "Sportsdirektør"
   ) |> 
   mutate(
     rel_points = points / price
@@ -199,7 +212,7 @@ plot_top_15 <- function(
 
 sprinter <- mvp_abs |> 
    plot_top_15(
-  position = "Sprinter",
+  position = "Spurter",
   x_axis = "points",
   absolute_points = NULL,
   x_start = 200,
@@ -209,7 +222,7 @@ sprinter <- mvp_abs |>
 
 youth <- mvp_abs |> 
   plot_top_15(
-  position = "Youth",
+  position = "Ungdomsrytter",
   x_axis = "points",
   absolute_points = NULL,
   x_start = 200,
@@ -219,7 +232,7 @@ youth <- mvp_abs |>
 
 captain <- mvp_abs |> 
   plot_top_15(
-  position = "Captain",
+  position = "Kaptein",
   x_axis = "points",
   absolute_points = NULL,
   x_start = 0,
@@ -229,7 +242,7 @@ captain <- mvp_abs |>
 
 climber <- mvp_abs |> 
   plot_top_15(
-  position = "Climber",
+  position = "Klatrer",
   x_axis = "points",
   absolute_points = NULL,
   x_start = 400,
@@ -239,7 +252,7 @@ climber <- mvp_abs |>
 
 tempo <- mvp_abs |> 
   plot_top_15(
-  position = "Tempo",
+  position = "Temporytter",
   x_axis = "points",
   absolute_points = FALSE,
   x_start = 100,
@@ -250,7 +263,7 @@ tempo <- mvp_abs |>
 # Had to brute force support for some reason, scale_x_cont did not scale properly.
 
 support <- mvp_abs |> 
-  filter(position == "Support") |> 
+  filter(position == "Hjelperytter") |> 
   ggplot(
     aes(
       x = points,
@@ -294,7 +307,7 @@ ggsave(
 
 youth <- mvp_rel |> 
   plot_top_15(
-  position = "Youth",
+  position = "Ungdomsrytter",
   x_axis = "rel_points",
   absolute_points = NULL,
    x_start = 0,
@@ -304,7 +317,7 @@ youth <- mvp_rel |>
 
 captain <- mvp_rel |> 
   plot_top_15(
-  position = "Captain",
+  position = "Kaptein",
   x_axis = "rel_points",
   absolute_points = NULL,
    x_start = 0,
@@ -314,7 +327,7 @@ captain <- mvp_rel |>
 
 climber <- mvp_rel |> 
   plot_top_15(
-  position = "Climber",
+  position = "Klatrer",
   x_axis = "rel_points",
   absolute_points = NULL,
    x_start = 0,
@@ -324,7 +337,7 @@ climber <- mvp_rel |>
 
 tempo <- mvp_rel |> 
   plot_top_15(
-  position = "Tempo",
+  position = "Temporytter",
   x_axis = "rel_points",
   absolute_points = TRUE,
   x_start = 0,
@@ -334,7 +347,7 @@ tempo <- mvp_rel |>
 
 support <- mvp_rel |> 
   plot_top_15(
-  position = "Support",
+  position = "Hjelperytter",
   x_axis = "rel_points",
   absolute_points = TRUE,
   x_start = 0,
@@ -344,7 +357,7 @@ support <- mvp_rel |>
 
 sprinter <- mvp_rel |> 
   plot_top_15(
-  position = "Sprinter",
+  position = "Spurter",
   x_axis = "rel_points",
   absolute_points = NULL,
   x_start = 0,
@@ -378,7 +391,7 @@ ggsave(
 # Absolute points for managers
 
 p1 <- cleaned_data |> 
-  filter(position == "Manager") |> 
+  filter(position == "Sportsdirektør") |> 
   ggplot(
     aes(
       x = points,
@@ -406,7 +419,7 @@ p2 <- cleaned_data |>
   mutate(
     rel_points = points / price
   ) |> 
-  filter(position == "Manager") |> 
+  filter(position == "Sportsdirektør") |> 
   ggplot(
     aes(
       x = rel_points,

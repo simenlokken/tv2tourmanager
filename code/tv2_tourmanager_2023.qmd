@@ -1,0 +1,434 @@
+---
+title: ""
+format: html
+editor: visual
+---
+
+## Set environment and load packages
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(
+  message = FALSE,
+  warning = FALSE,
+  echo = TRUE,
+  dpi = 300
+)
+
+knitr::opts_knit$set(
+  root.dir = "C:/Users/simen/Desktop/tv2tourmanager"
+)
+```
+
+```{r}
+
+library(tidyverse)
+library(patchwork)
+```
+
+## Prepare data
+
+```{r}
+
+# Load data
+
+data <- read_csv("data/tourmanager_2023.csv")
+```
+
+```{r}
+
+# Clean data and select relevant columns
+
+cleaned_data <- data |> 
+  janitor::clean_names() |> 
+  mutate(
+    position = str_to_title(position),
+    position = as.factor(position)
+  ) |> 
+  select(
+    player, rank, position, team, price, sprint_points,
+    climb_points, placement_points, points
+  ) 
+```
+
+## Analyses
+
+#### 1. Who was the top 15 riders, both absolutely and relatively?
+
+```{r}
+
+# Absolute points
+
+top_15_abs <- cleaned_data |> 
+  slice_max(
+    order_by = points,
+    n = 15
+  ) |>
+  ggplot(
+    aes(
+      x = points,
+      y = forcats::fct_reorder(player, points)
+    )
+  ) +
+  geom_point() +
+  theme_minimal() +
+  labs(
+    title = "Top 15 highest ranked players",
+    y = NULL,
+    x = "Points"
+  ) +
+  scale_x_continuous(
+    breaks = seq(1000, 2500, 250)
+  ) +
+  theme(
+    panel.grid.minor = element_blank()
+  )
+
+# Points relative to player pricing
+
+top_15_rel <- cleaned_data |> 
+  mutate(
+    rel_points = points / price
+  ) |> 
+  slice_max(
+    order_by = rel_points,
+    n = 15
+  ) |>
+  ggplot(
+    aes(
+      x = rel_points,
+      y = forcats::fct_reorder(player, rel_points)
+    )
+  ) +
+  geom_point() +
+  theme_minimal() +
+  labs(
+    title = "Top 15 highest ranked players",
+    subtitle = "Points per price unit", 
+    y = NULL,
+    x = "Points per price unit"
+  ) +
+  scale_x_continuous(
+    breaks = seq(150, 400, 50)
+  ) +
+  theme(
+    panel.grid.minor = element_blank()
+  )
+```
+
+```{r}
+
+# Patch plots
+
+top_15_abs + top_15_rel
+
+ggsave(
+  filename = "figures/top_15_rank_abs_rel.jpg",
+  dpi = 300,
+  height = 8, 
+  width = 10
+)
+```
+
+#### 2. Who was the top 15 riders in each rider category both absolutely and relatively?
+
+```{r}
+
+# Create an absolute and relative MVP dataset for easy use of facet_wrap() 
+
+mvp_abs <- cleaned_data |> 
+  filter(
+    position != "Manager"
+  ) |> 
+  group_by(position) |> 
+  slice_max(
+    n = 15,
+    order_by = points
+  )
+
+mvp_rel <- cleaned_data |> 
+  filter(
+    position != "Manager"
+  ) |> 
+  mutate(
+    rel_points = points / price
+  ) |> 
+  group_by(position) |> 
+  slice_max(
+    n = 15,
+    order_by = rel_points
+  )
+```
+
+```{r}
+
+# Plot top 15 riders in each category absolutely
+
+plot_top_15 <- function(
+  dataframe,
+  position,
+  x_axis,
+  absolute_points,
+  x_start = NULL,
+  x_end = NULL,
+  x_step = NULL
+) {
+  plot <- dataframe |> 
+    filter(position == {{ position }}) |> 
+    ggplot(
+      aes(
+        x = !!sym(x_axis),
+        y = fct_reorder(player, !!sym(x_axis))
+      )
+    ) +
+    geom_point() +
+    theme_minimal() +
+    theme(
+      panel.grid.minor = element_blank()
+    ) +
+    labs(
+      title = {{ position }},
+      x = ifelse(absolute_points == FALSE, "Points", "Points per price unit"),
+      y = NULL
+    ) +
+    scale_x_continuous(
+      breaks = seq(x_start, x_end, x_step)
+    )
+  return(plot)
+}
+
+youth <- mvp_abs |> 
+  plot_top_15(
+  position = "Youth",
+  x_axis = "points",
+  absolute_points = NULL,
+  x_start = 200,
+  x_end = 2500,
+  x_step = 200
+  )
+
+captain <- mvp_abs |> 
+  plot_top_15(
+  position = "Captain",
+  x_axis = "points",
+  absolute_points = NULL,
+  x_start = 0,
+  x_end = 2200,
+  x_step = 200
+  )
+
+climber <- mvp_abs |> 
+  plot_top_15(
+  position = "Climber",
+  x_axis = "points",
+  absolute_points = NULL,
+  x_start = 400,
+  x_end = 1900,
+  x_step = 200
+  )
+
+tempo <- mvp_abs |> 
+  plot_top_15(
+  position = "Tempo",
+  x_axis = "points",
+  absolute_points = FALSE,
+  x_start = 100,
+  x_end = 1000,
+  x_step = 200
+  )
+
+# Had to brute force support for some reason, scale_x_cont did not scale properly.
+
+support <- mvp_abs |> 
+  filter(position == "Support") |> 
+  ggplot(
+    aes(
+      x = points,
+      y = fct_reorder(player, points)
+    )
+  ) +
+  geom_point() +
+  theme_minimal() +
+  theme(
+    panel.grid.minor = element_blank()
+  ) +
+  labs(
+    title = "Support",
+    x = "Points",
+    y = NULL
+  ) +
+  xlim(400, 1250)
+```
+
+```{r}
+
+# Patch plots and save them
+
+row1 <- youth + captain
+row2 <- sprinter + climber
+row3 <- support + tempo
+
+row1 / row2 / row3
+
+ggsave(
+  "figures/top_15_abs_cat.jpg",
+  dpi = 300,
+  height = 10,
+  width = 12
+)
+```
+
+```{r}
+
+# Plot top 15 riders in each category relatively
+
+youth <- mvp_rel |> 
+  plot_top_15(
+  position = "Youth",
+  x_axis = "rel_points",
+  absolute_points = NULL,
+   x_start = 0,
+  x_end = 600,
+  x_step = 50
+  )
+
+captain <- mvp_rel |> 
+  plot_top_15(
+  position = "Captain",
+  x_axis = "rel_points",
+  absolute_points = NULL,
+   x_start = 0,
+  x_end = 600,
+  x_step = 20
+  )
+
+climber <- mvp_rel |> 
+  plot_top_15(
+  position = "Climber",
+  x_axis = "rel_points",
+  absolute_points = NULL,
+   x_start = 0,
+  x_end = 600,
+  x_step = 20
+  )
+
+tempo <- mvp_rel |> 
+  plot_top_15(
+  position = "Tempo",
+  x_axis = "rel_points",
+  absolute_points = TRUE,
+  x_start = 0,
+  x_end = 300,
+  x_step = 20
+  )
+
+support <- mvp_rel |> 
+  plot_top_15(
+  position = "Support",
+  x_axis = "rel_points",
+  absolute_points = TRUE,
+  x_start = 0,
+  x_end = 300,
+  x_step = 20
+  )
+
+sprinter <- mvp_rel |> 
+  plot_top_15(
+  position = "Sprinter",
+  x_axis = "rel_points",
+  absolute_points = NULL,
+  x_start = 0,
+  x_end = 200,
+  x_step = 20
+  )
+```
+
+```{r}
+
+# Patch plots and save them
+
+row1 <- youth + captain
+row2 <- sprinter + climber
+row3 <- support + tempo
+
+row1 / row2 / row3
+
+ggsave(
+  "figures/top_15_rel_cat.jpg",
+  dpi = 300,
+  height = 10,
+  width = 12
+)
+```
+
+#### 2. Which manager should you choose for the 2024 version?
+
+```{r}
+
+# Absolute points for managers
+
+p1 <- cleaned_data |> 
+  filter(position == "Manager") |> 
+  ggplot(
+    aes(
+      x = points,
+      y = fct_reorder(player, points)
+    )
+  ) +
+  geom_point() + 
+  theme_minimal() +
+  theme(
+    panel.grid.minor = element_blank()
+  ) +
+  scale_x_continuous(
+    breaks = seq(0, 1000, 100)
+  ) +
+  labs(
+    title = "Which manager should you use?",
+    subtitle = "Absolute points",
+    x = "Points",
+    y = NULL
+  )
+
+# Relative points for managers
+
+p2 <- cleaned_data |> 
+  mutate(
+    rel_points = points / price
+  ) |> 
+  filter(position == "Manager") |> 
+  ggplot(
+    aes(
+      x = rel_points,
+      y = fct_reorder(player, rel_points)
+    )
+  ) +
+  geom_point() + 
+  theme_minimal() +
+  theme(
+    panel.grid.minor = element_blank()
+  ) +
+  scale_x_continuous(
+    breaks = seq(0, 300, 20)
+  ) +
+  labs(
+    title = "Which manager should you use?",
+    subtitle = "Relative points, per price unit",
+    x = "Points per price unit",
+    y = NULL
+  )
+```
+
+```{r}
+
+# Patch plots and save them
+
+p1 + p2
+
+ggsave(
+  "figures/managers_abs_rel.jpg",
+  dpi = 300,
+  height = 7,
+  width = 9
+)
+```

@@ -1,0 +1,43 @@
+---
+title: "Tourmanager - 1st week analysis"
+format: 
+  html:
+    warning: false
+    message: false
+editor: visual
+---
+
+#### Set environment and clean data
+
+```{r}
+
+# Load packages
+
+library(ggplot2)
+library(dplyr)
+library(forcats)
+
+# Load data
+
+tdf <- read.csv("tourmanager_before_start.csv")
+
+# Clean data
+
+tdf_cleaned <- tdf |> 
+  janitor::clean_names()
+
+tdf_cleaned <- tdf_cleaned |> 
+  select(c(player, position, team, price))
+
+tdf_cleaned |> 
+  group_by(position, team) |> 
+  summarize(mean_price = mean(price)) |> 
+  ggplot(aes(x = mean_price, y = team)) +
+  geom_point() +
+  facet_wrap(~position)
+
+mpg |> 
+  ggplot(aes(x = year, y = cty)) +
+  geom_point() +
+  facet_wrap(~class)
+```

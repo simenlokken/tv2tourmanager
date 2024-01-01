@@ -1,0 +1,220 @@
+Rank,Previous Rank,Player,Position,Team,Price,Shirt points,Shirt count,Sprint points,Sprint count,Climb points,Climb count,Placement points,Placement count,Bought,Sold,Points
+1,1,Adam Yates,climber,UAE Team Emirates,8.2,0.00,1,0.00,0,0.00,0,300.00,1,0,0,435.00
+2,2,Tadej Pogačar,captain,UAE Team Emirates,11.7,0.00,1,0.00,0,12.00,1,120.00,1,0,0,192.00
+3,3,UAE Team Emirates,manager,UAE Team Emirates,10.5,0.00,0,0.00,0,0.00,0,160.00,1,0,0,160.00
+3,3,Simon Yates,captain,Team Jayco Alula,9.5,0.00,0,0.00,0,0.00,0,160.00,1,0,0,160.00
+5,5,Thibaut Pinot,climber,Groupama - FDJ,7,0.00,0,0.00,0,0.00,0,150.00,1,0,0,150.00
+6,6,Jonas Gregaard Wilsy,support,Uno-X Pro Cycling Team,3.9,0.00,0,44.00,1,24.00,1,54.00,2,0,0,122.00
+7,7,Michael Woods,climber,Israel-Premier Tech,7.9,0.00,0,0.00,0,0.00,0,120.00,1,0,0,120.00
+7,7,Pascal Eenkhoorn,support,Lotto Dstny,5.2,0.00,0,80.00,1,36.00,2,4.00,1,0,0,120.00
+9,9,Mattias Skjelmose,youth,Lidl-Trek,7.8,0.00,0,0.00,0,0.00,0,112.00,1,0,0,112.00
+10,10,Neilson Powless,climber,EF Education-EasyPost,7.6,0.00,1,0.00,0,45.00,1,6.00,1,0,0,111.00
+11,11,Victor Lafay,climber,Cofidis,6.5,0.00,0,0.00,0,0.00,0,108.00,1,0,0,108.00
+12,12,Team Jayco AIUIA,manager,Team Jayco Alula,7,0.00,0,0.00,0,0.00,0,100.00,1,0,0,100.00
+13,13,Simon Guglielmi,support,Team Arkea Samsic,4,0.00,0,68.00,1,12.00,1,4.00,1,0,0,84.00
+14,14,Jai Hindley,captain,BORA-Hansgrohe,10.7,0.00,0,0.00,0,0.00,0,64.00,1,0,0,64.00
+14,14,Valentin Ferron,youth,TotalEnergies,4.5,0.00,0,60.00,1,0.00,0,4.00,1,0,0,64.00
+16,16,Groupama-FDJ,manager,Groupama - FDJ,8.5,0.00,0,0.00,0,0.00,0,60.00,1,0,0,60.00
+16,16,Lilian Calmejane,support,Intermarché - Circus - Wanty,3.6,0.00,0,52.00,1,0.00,0,8.00,1,0,0,60.00
+18,18,Jonas Vingegaard,captain,Jumbo-Visma,11.8,0.00,0,0.00,0,6.00,1,48.00,1,0,0,54.00
+19,19,Carlos Rodriguez Cano,youth,INEOS Grenadiers,7.3,0.00,0,0.00,0,0.00,0,48.00,1,0,0,48.00
+19,19,Felix Großschartner,support,UAE Team Emirates,5.1,0.00,0,0.00,0,0.00,0,8.00,1,0,0,48.00
+21,21,Georg Zimmermann,support,Intermarché - Circus - Wanty,4.9,0.00,0,0.00,0,36.00,1,8.00,1,0,0,44.00
+21,21,Vegard Stake Laengen,support,UAE Team Emirates,3.9,0.00,0,0.00,0,0.00,0,4.00,1,0,0,44.00
+23,23,David Gaudu,captain,Groupama - FDJ,9.2,0.00,0,0.00,0,0.00,0,42.00,1,0,0,42.00
+24,24,Israel-Premier Tech,manager,Israel-Premier Tech,6.3,0.00,0,0.00,0,0.00,0,40.00,1,0,0,40.00
+25,25,Wout Van Aert,sprinter,Jumbo-Visma,11.3,0.00,0,0.00,0,0.00,0,36.00,1,0,0,36.00
+25,25,Rafał Majka,climber,UAE Team Emirates,7.7,0.00,0,0.00,0,0.00,0,6.00,1,0,0,36.00
+25,25,Marc Soler,climber,UAE Team Emirates,7.5,0.00,0,0.00,0,0.00,0,6.00,1,0,0,36.00
+28,28,Mikkel Bjerg,tempo,UAE Team Emirates,6,0.00,0,0.00,0,0.00,0,3.00,1,0,0,33.00
+29,29,Corbin Strong,youth,Israel-Premier Tech,5.2,0.00,0,0.00,0,0.00,0,32.00,1,0,0,32.00
+30,30,Mikel Landa,captain,Bahrain - Victorious,9.2,0.00,0,0.00,0,0.00,0,30.00,1,0,0,30.00
+30,30,Wilco Kelderman,climber,Jumbo-Visma,7.9,0.00,0,0.00,0,0.00,0,30.00,1,0,0,30.00
+32,32,Alex Aranburu Deba,support,Movistar Team,6,0.00,0,0.00,0,0.00,0,28.00,1,0,0,28.00
+33,33,Jhoan Esteban Chaves,climber,EF Education-EasyPost,6.9,0.00,0,0.00,0,18.00,1,6.00,1,0,0,24.00
+33,33,Maxim Van Gils,youth,Lotto Dstny,5.8,0.00,0,0.00,0,0.00,0,24.00,1,0,0,24.00
+35,35,Mads Pedersen,sprinter,Lidl-Trek,8.5,0.00,0,20.00,1,0.00,0,2.00,1,0,0,22.00
+35,35,Matteo Trentin,sprinter,UAE Team Emirates,7.7,0.00,0,0.00,0,0.00,0,2.00,1,0,0,22.00
+37,37,Peter Sagan,sprinter,TotalEnergies,7.9,0.00,0,18.00,1,0.00,0,2.00,1,0,0,20.00
+37,37,Cofidis,manager,Cofidis,6,0.00,0,0.00,0,0.00,0,20.00,1,0,0,20.00
+37,37,Dylan Van Baarle,support,Jumbo-Visma,4.9,0.00,0,0.00,0,12.00,1,8.00,1,0,0,20.00
+40,40,Jasper Philipsen,sprinter,Alpecin-Deceuninck,10.3,0.00,0,16.00,1,0.00,0,2.00,1,0,0,18.00
+41,41,Mark Cavendish,sprinter,Astana Qazaqstan Team,9,0.00,0,14.00,1,0.00,0,2.00,1,0,0,16.00
+41,41,Jonas Abrahamsen,support,Uno-X Pro Cycling Team,4,0.00,0,0.00,0,12.00,1,4.00,1,0,0,16.00
+43,43,Dylan Teuns,climber,Israel-Premier Tech,7,0.00,0,0.00,0,0.00,0,15.00,1,0,0,15.00
+44,44,Bryan Coquard,sprinter,Cofidis,7.5,0.00,0,12.00,1,0.00,0,2.00,1,0,0,14.00
+45,45,Dylan Groenewegen,sprinter,Team Jayco Alula,9.4,0.00,0,10.00,1,0.00,0,2.00,1,0,0,12.00
+45,45,Mathieu Van Der Poel,support,Alpecin-Deceuninck,8,0.00,0,0.00,0,0.00,0,12.00,1,0,0,12.00
+45,45,Thomas Pidcock,youth,INEOS Grenadiers,7.8,0.00,0,0.00,0,0.00,0,12.00,1,0,0,12.00
+45,45,Jasper Stuyven,support,Lidl-Trek,7,0.00,0,8.00,1,0.00,0,4.00,1,0,0,12.00
+45,45,Felix Gall,youth,AG2R Citroën Team,6.1,0.00,0,0.00,0,0.00,0,12.00,1,0,0,12.00
+45,45,Valentin Madouas,support,Groupama - FDJ,6,0.00,0,0.00,0,0.00,0,12.00,1,0,0,12.00
+45,45,Luis Leon Sanchez,support,Astana Qazaqstan Team,5.5,0.00,0,0.00,0,0.00,0,12.00,1,0,0,12.00
+45,45,Tobias Halland Johannessen,youth,Uno-X Pro Cycling Team,5,0.00,0,0.00,0,0.00,0,12.00,1,0,0,12.00
+45,45,Steff Cras,climber,TotalEnergies,4.7,0.00,0,0.00,0,0.00,0,12.00,1,0,0,12.00
+45,45,Matthew Dinham,youth,dsm-firmenich,4.5,0.00,0,0.00,0,0.00,0,12.00,1,0,0,12.00
+45,45,Clement Berthet,support,AG2R Citroën Team,4.1,0.00,0,0.00,0,0.00,0,12.00,1,0,0,12.00
+56,56,Biniam Girmay,sprinter,Intermarché - Circus - Wanty,9.2,0.00,0,6.00,1,0.00,0,4.00,1,0,0,10.00
+56,56,Jordi Meeus,sprinter,BORA-Hansgrohe,7.7,0.00,0,8.00,1,0.00,0,2.00,1,0,0,10.00
+58,58,Giulio Ciccone,climber,Lidl-Trek,8.1,0.00,0,0.00,0,0.00,0,9.00,1,0,0,9.00
+58,58,Sepp Kuss,climber,Jumbo-Visma,8,0.00,0,0.00,0,0.00,0,9.00,1,0,0,9.00
+58,58,Julian Alaphilippe,climber,Soudal Quick-Step,7.8,0.00,0,0.00,0,0.00,0,9.00,1,0,0,9.00
+58,58,Jack Haig,climber,Bahrain - Victorious,6.9,0.00,0,0.00,0,0.00,0,9.00,1,0,0,9.00
+58,58,Emanuel Buchmann,climber,BORA-Hansgrohe,6.5,0.00,0,0.00,0,0.00,0,9.00,1,0,0,9.00
+58,58,Harold Tejeda,climber,Astana Qazaqstan Team,4.8,0.00,0,0.00,0,0.00,0,9.00,1,0,0,9.00
+58,58,Chris Harper,climber,Team Jayco Alula,4.5,0.00,0,0.00,0,0.00,0,9.00,1,0,0,9.00
+65,65,Matej Mohoric,support,Bahrain - Victorious,7.6,0.00,0,0.00,0,0.00,0,8.00,1,0,0,8.00
+65,65,Alexey Lutsenko,support,Astana Qazaqstan Team,7,0.00,0,0.00,0,0.00,0,8.00,1,0,0,8.00
+65,65,Matteo Jorgenson,youth,Movistar Team,6.8,0.00,0,0.00,0,0.00,0,8.00,1,0,0,8.00
+65,65,Alberto Bettiol,support,EF Education-EasyPost,6.7,0.00,0,0.00,0,0.00,0,8.00,1,0,0,8.00
+65,65,Tiesj Benoot,support,Jumbo-Visma,6.5,0.00,0,0.00,0,0.00,0,8.00,1,0,0,8.00
+65,65,Simon Clarke,support,Israel-Premier Tech,6.2,0.00,0,0.00,0,0.00,0,8.00,1,0,0,8.00
+65,65,Anthony Turgis,support,TotalEnergies,6,0.00,0,0.00,0,0.00,0,8.00,1,0,0,8.00
+65,65,Nils Politt,support,BORA-Hansgrohe,5.9,0.00,0,0.00,0,0.00,0,8.00,1,0,0,8.00
+65,65,Patrick Konrad,support,BORA-Hansgrohe,5.9,0.00,0,0.00,0,0.00,0,8.00,1,0,0,8.00
+65,65,Kevin Geniets,support,Groupama - FDJ,5.5,0.00,0,0.00,0,0.00,0,8.00,1,0,0,8.00
+65,65,Nicholas Schultz,support,Israel-Premier Tech,5.5,0.00,0,0.00,0,0.00,0,8.00,1,0,0,8.00
+65,65,Mathieu Burgaudeau,youth,TotalEnergies,5.5,0.00,0,0.00,0,0.00,0,8.00,1,0,0,8.00
+65,65,Tony Gallopin,support,Lidl-Trek,5.1,0.00,0,0.00,0,0.00,0,8.00,1,0,0,8.00
+65,65,Edvald Boasson Hagen,support,TotalEnergies,5,0.00,0,0.00,0,0.00,0,8.00,1,0,0,8.00
+65,65,Quinten Hermans,support,Alpecin-Deceuninck,4.8,0.00,0,0.00,0,0.00,0,8.00,1,0,0,8.00
+65,65,Dion Smith,support,Intermarché - Circus - Wanty,4.8,0.00,0,0.00,0,0.00,0,8.00,1,0,0,8.00
+65,65,Omar Fraile Matarranz,support,INEOS Grenadiers,4.8,0.00,0,0.00,0,0.00,0,8.00,1,0,0,8.00
+65,65,Dries Devenyns,support,Soudal Quick-Step,4.8,0.00,0,0.00,0,0.00,0,8.00,1,0,0,8.00
+65,65,Kevin Vermaerke,youth,dsm-firmenich,4.7,0.00,0,0.00,0,0.00,0,8.00,1,0,0,8.00
+65,65,Hugo Houle,support,Israel-Premier Tech,4.7,0.00,0,0.00,0,0.00,0,8.00,1,0,0,8.00
+65,65,Alexis Renard,youth,Cofidis,4.5,0.00,0,4.00,1,0.00,0,4.00,1,0,0,8.00
+65,65,Anthon Charmig,youth,Uno-X Pro Cycling Team,4.5,0.00,0,0.00,0,0.00,0,8.00,1,0,0,8.00
+65,65,Matis Louvel,youth,Team Arkea Samsic,4.5,0.00,0,0.00,0,0.00,0,8.00,1,0,0,8.00
+65,65,Christopher Hamilton,support,dsm-firmenich,4.4,0.00,0,0.00,0,0.00,0,8.00,1,0,0,8.00
+65,65,Krists Neilands,support,Israel-Premier Tech,4.3,0.00,0,0.00,0,0.00,0,8.00,1,0,0,8.00
+65,65,Daniel Oss,support,TotalEnergies,4.2,0.00,0,0.00,0,0.00,0,8.00,1,0,0,8.00
+65,65,James Shaw,support,EF Education-EasyPost,4.2,0.00,0,0.00,0,0.00,0,8.00,1,0,0,8.00
+65,65,Anthony Delaplace,support,Team Arkea Samsic,3.9,0.00,0,0.00,0,0.00,0,8.00,1,0,0,8.00
+93,93,Ben O'Connor,captain,AG2R Citroën Team,9.8,0.00,0,0.00,0,0.00,0,6.00,1,0,0,6.00
+93,93,Egan Bernal,captain,INEOS Grenadiers,9.4,0.00,0,0.00,0,0.00,0,6.00,1,0,0,6.00
+93,93,Romain Bardet,captain,dsm-firmenich,9.4,0.00,0,0.00,0,0.00,0,6.00,1,0,0,6.00
+93,93,Guillaume Martin,captain,Cofidis,8.4,0.00,0,0.00,0,0.00,0,6.00,1,0,0,6.00
+93,93,Louis Meintjes,captain,Intermarché - Circus - Wanty,8.3,0.00,0,0.00,0,0.00,0,6.00,1,0,0,6.00
+93,93,Daniel Felipe Martinez Poveda,climber,INEOS Grenadiers,8,0.00,0,0.00,0,0.00,0,6.00,1,0,0,6.00
+93,93,Rigoberto Uran,climber,EF Education-EasyPost,7.9,0.00,0,0.00,0,0.00,0,6.00,1,0,0,6.00
+93,93,Pello Bilbao Lopez,climber,Bahrain - Victorious,7.4,0.00,0,0.00,0,0.00,0,6.00,1,0,0,6.00
+93,93,Ruben Guerreiro,climber,Movistar Team,7.2,0.00,0,0.00,0,0.00,0,6.00,1,0,0,6.00
+93,93,Kasper Asgreen,tempo,Soudal Quick-Step,7.2,0.00,0,0.00,0,0.00,0,6.00,1,0,0,6.00
+93,93,Ion Izagirre Insausti,climber,Cofidis,6.7,0.00,0,0.00,0,0.00,0,6.00,1,0,0,6.00
+93,93,Michał Kwiatkowski,tempo,INEOS Grenadiers,6.5,0.00,0,0.00,0,0.00,0,6.00,1,0,0,6.00
+93,93,Wout Poels,climber,Bahrain - Victorious,6.5,0.00,0,0.00,0,0.00,0,6.00,1,0,0,6.00
+93,93,Gorka Izagirre,climber,Movistar Team,6.3,0.00,0,0.00,0,0.00,0,6.00,1,0,0,6.00
+93,93,Bob Jungels,tempo,BORA-Hansgrohe,6.2,0.00,0,0.00,0,0.00,0,6.00,1,0,0,6.00
+93,93,Juan Pedro López,climber,Lidl-Trek,6.2,0.00,0,0.00,0,0.00,0,6.00,1,0,0,6.00
+93,93,Jonathan Castroviejo,tempo,INEOS Grenadiers,6.1,0.00,0,0.00,0,0.00,0,6.00,1,0,0,6.00
+93,93,Aurelien Paret-Peintre,climber,AG2R Citroën Team,6,0.00,0,0.00,0,0.00,0,6.00,1,0,0,6.00
+93,93,Rui Costa,climber,Intermarché - Circus - Wanty,5.8,0.00,0,0.00,0,0.00,0,6.00,1,0,0,6.00
+93,93,Victor Campenaerts,tempo,Lotto Dstny,5.7,0.00,0,0.00,0,0.00,0,6.00,1,0,0,6.00
+93,93,Torstein Træen,climber,Uno-X Pro Cycling Team,5.7,0.00,0,0.00,0,0.00,0,6.00,1,0,0,6.00
+93,93,David De La Cruz,climber,Astana Qazaqstan Team,5.6,0.00,0,0.00,0,0.00,0,6.00,1,0,0,6.00
+93,93,Rémi Cavagna,tempo,Soudal Quick-Step,5.6,0.00,0,0.00,0,0.00,0,6.00,1,0,0,6.00
+93,93,Nelson Oliveira,tempo,Movistar Team,5.6,0.00,0,0.00,0,0.00,0,6.00,1,0,0,6.00
+93,93,Quentin Pacher,climber,Groupama - FDJ,5.4,0.00,0,0.00,0,0.00,0,6.00,1,0,0,6.00
+93,93,Nathan Van Hooydonck,tempo,Jumbo-Visma,5.4,0.00,0,0.00,0,0.00,0,6.00,1,0,0,6.00
+93,93,Simon Geschke,climber,Cofidis,5.2,0.00,0,0.00,0,0.00,0,6.00,1,0,0,6.00
+120,120,Warren Barguil,captain,Team Arkea Samsic,8.5,0.00,0,0.00,0,0.00,0,4.00,1,0,0,4.00
+120,120,Pierre Latour,captain,TotalEnergies,6.9,0.00,0,0.00,0,0.00,0,4.00,1,0,0,4.00
+120,120,Fred Wright,youth,Bahrain - Victorious,6.7,0.00,0,0.00,0,0.00,0,4.00,1,0,0,4.00
+120,120,Oliver Naesen,support,AG2R Citroën Team,6.2,0.00,0,0.00,0,0.00,0,4.00,1,0,0,4.00
+120,120,Benoit Cosnefroy,support,AG2R Citroën Team,6.2,0.00,0,0.00,0,0.00,0,4.00,1,0,0,4.00
+120,120,Axel Zingle,youth,Cofidis,6,0.00,0,0.00,0,0.00,0,4.00,1,0,0,4.00
+120,120,Clément Champoussin,youth,Team Arkea Samsic,5.7,0.00,0,0.00,0,0.00,0,4.00,1,0,0,4.00
+120,120,Mike Teunissen,support,Intermarché - Circus - Wanty,5.5,0.00,0,0.00,0,0.00,0,4.00,1,0,0,4.00
+120,120,Quinn Simmons,youth,Lidl-Trek,5.5,0.00,0,0.00,0,0.00,0,4.00,1,0,0,4.00
+120,120,Gianni Moscon,support,Astana Qazaqstan Team,5.5,0.00,0,0.00,0,0.00,0,4.00,1,0,0,4.00
+120,120,Florian Vermeersch,youth,Lotto Dstny,5.4,0.00,0,0.00,0,0.00,0,4.00,1,0,0,4.00
+120,120,John Degenkolb,support,dsm-firmenich,5.4,0.00,0,0.00,0,0.00,0,4.00,1,0,0,4.00
+120,120,Gregor Muhlberger,support,Movistar Team,5.3,0.00,0,0.00,0,0.00,0,4.00,1,0,0,4.00
+120,120,Antonio Pedrero,support,Movistar Team,5.2,0.00,0,0.00,0,0.00,0,4.00,1,0,0,4.00
+120,120,Michael Mørkøv,support,Soudal Quick-Step,5.1,0.00,0,0.00,0,0.00,0,4.00,1,0,0,4.00
+120,120,Jasper De Buyst,support,Lotto Dstny,5.1,0.00,0,0.00,0,0.00,0,4.00,1,0,0,4.00
+120,120,Ben Turner,youth,INEOS Grenadiers,5.1,0.00,0,0.00,0,0.00,0,4.00,1,0,0,4.00
+120,120,Marco Haller,support,BORA-Hansgrohe,5,0.00,0,0.00,0,0.00,0,4.00,1,0,0,4.00
+120,120,Nikias Arndt,support,Bahrain - Victorious,5,0.00,0,0.00,0,0.00,0,4.00,1,0,0,4.00
+120,120,Nils Eekhoff,youth,dsm-firmenich,4.9,0.00,0,0.00,0,0.00,0,4.00,1,0,0,4.00
+120,120,Laurent Pichon,support,Team Arkea Samsic,4.8,0.00,0,0.00,0,0.00,0,4.00,1,0,0,4.00
+120,120,Frederik Frison,support,Lotto Dstny,4.7,0.00,0,0.00,0,0.00,0,4.00,1,0,0,4.00
+120,120,Silvan Dillier,support,Alpecin-Deceuninck,4.7,0.00,0,0.00,0,0.00,0,4.00,1,0,0,4.00
+120,120,Christopher Juul-Jensen,support,Team Jayco Alula,4.6,0.00,0,0.00,0,0.00,0,4.00,1,0,0,4.00
+120,120,Alex Kirsch,support,Lidl-Trek,4.6,0.00,0,0.00,0,0.00,0,4.00,1,0,0,4.00
+120,120,Søren Wærenskjold,youth,Uno-X Pro Cycling Team,4.6,0.00,0,0.00,0,0.00,0,4.00,1,0,0,4.00
+120,120,Stan Dewulf,support,AG2R Citroën Team,4.6,0.00,0,0.00,0,0.00,0,4.00,1,0,0,4.00
+120,120,Lars van de Berg,youth,Groupama - FDJ,4.5,0.00,0,0.00,0,0.00,0,4.00,1,0,0,4.00
+120,120,Nans Peters,support,AG2R Citroën Team,4.5,0.00,0,0.00,0,0.00,0,4.00,1,0,0,4.00
+120,120,Yevgeniy Fedorov,youth,Astana Qazaqstan Team,4.5,0.00,0,0.00,0,0.00,0,4.00,1,0,0,4.00
+120,120,Guillaume Boivin,support,Israel-Premier Tech,4.5,0.00,0,0.00,0,0.00,0,4.00,1,0,0,4.00
+120,120,Jacopo Guarnieri,support,Lotto Dstny,4.4,0.00,0,0.00,0,0.00,0,4.00,1,0,0,4.00
+120,120,Rasmus Tiller,support,Uno-X Pro Cycling Team,4.4,0.00,0,0.00,0,0.00,0,4.00,1,0,0,4.00
+120,120,Jonas Rickaert,support,Alpecin-Deceuninck,4.3,0.00,0,0.00,0,0.00,0,4.00,1,0,0,4.00
+120,120,Olivier Le Gac,support,Groupama - FDJ,4.3,0.00,0,0.00,0,0.00,0,4.00,1,0,0,4.00
+120,120,Elmar Reinders,support,Team Jayco Alula,4.3,0.00,0,0.00,0,0.00,0,4.00,1,0,0,4.00
+120,120,Ramon Sinkeldam,support,Alpecin-Deceuninck,4.3,0.00,0,0.00,0,0.00,0,4.00,1,0,0,4.00
+120,120,Jenthe Biermans,support,Team Arkea Samsic,4.2,0.00,0,0.00,0,0.00,0,4.00,1,0,0,4.00
+120,120,Andrey Amador,support,EF Education-EasyPost,4.1,0.00,0,0.00,0,0.00,0,4.00,1,0,0,4.00
+120,120,Adrien Petit,support,Intermarché - Circus - Wanty,4,0.00,0,0.00,0,0.00,0,4.00,1,0,0,4.00
+120,120,Tim Declercq,support,Soudal Quick-Step,4,0.00,0,0.00,0,0.00,0,4.00,1,0,0,4.00
+120,120,Anthony Perez,support,Cofidis,3.6,0.00,0,0.00,0,0.00,0,4.00,1,0,0,4.00
+162,162,Stefan Küng,tempo,Groupama - FDJ,7.5,0.00,0,0.00,0,0.00,0,3.00,1,0,0,3.00
+162,162,Magnus Cort Nielsen,tempo,EF Education-EasyPost,7,0.00,0,0.00,0,0.00,0,3.00,1,0,0,3.00
+162,162,Yves Lampaert,tempo,Soudal Quick-Step,6.6,0.00,0,0.00,0,0.00,0,3.00,1,0,0,3.00
+162,162,Michael Gogl,climber,Alpecin-Deceuninck,5.3,0.00,0,0.00,0,0.00,0,3.00,1,0,0,3.00
+162,162,Søren Kragh Andersen,tempo,Alpecin-Deceuninck,5.1,0.00,0,0.00,0,0.00,0,3.00,1,0,0,3.00
+162,162,Luke Durbridge,tempo,Team Jayco Alula,5.1,0.00,0,0.00,0,0.00,0,3.00,1,0,0,3.00
+162,162,Alex Edmondson,tempo,dsm-firmenich,4.8,0.00,0,0.00,0,0.00,0,3.00,1,0,0,3.00
+162,162,Lawson Craddock,tempo,Team Jayco Alula,4.6,0.00,0,0.00,0,0.00,0,3.00,1,0,0,3.00
+170,170,Fabio Jakobsen,sprinter,Soudal Quick-Step,11,0.00,0,0.00,0,0.00,0,2.00,1,0,0,2.00
+170,170,Caleb Ewan,sprinter,Lotto Dstny,10.3,0.00,0,0.00,0,0.00,0,2.00,1,0,0,2.00
+170,170,Richard Carapaz,captain,EF Education-EasyPost,9.8,0.00,0,0.00,0,0.00,0,2.00,1,0,0,2.00
+170,170,Christophe Laporte,sprinter,Jumbo-Visma,8.1,0.00,0,0.00,0,0.00,0,2.00,1,0,0,2.00
+170,170,Alexander Kristoff,sprinter,Uno-X Pro Cycling Team,8,0.00,0,0.00,0,0.00,0,2.00,1,0,0,2.00
+170,170,Phil Bauhaus,sprinter,Bahrain - Victorious,7.6,0.00,0,0.00,0,0.00,0,2.00,1,0,0,2.00
+170,170,Cees Bol,sprinter,Astana Qazaqstan Team,7.4,0.00,0,0.00,0,0.00,0,2.00,1,0,0,2.00
+170,170,Luka Mezgec,sprinter,Team Jayco Alula,7.1,0.00,0,0.00,0,0.00,0,2.00,1,0,0,2.00
+170,170,Danny Van Poppel,sprinter,BORA-Hansgrohe,6.7,0.00,0,0.00,0,0.00,0,2.00,1,0,0,2.00
+170,170,Luca Mozzato,sprinter,Team Arkea Samsic,6.7,0.00,0,0.00,0,0.00,0,2.00,1,0,0,2.00
+170,170,Sam Welsford,sprinter,dsm-firmenich,6.5,0.00,0,0.00,0,0.00,0,2.00,1,0,0,2.00
+-,-,Jumbo-Visma,manager,Jumbo-Visma,11,0.00,0,0.00,0,0.00,0,0.00,0,0,0,0.00
+-,-,Enric Mas,captain,Movistar Team,10.4,0.00,0,0.00,0,0.00,0,0.00,0,0,0,0.00
+-,-,Alpecin-Deceuninck,manager,Alpecin-Deceuninck,10,0.00,0,0.00,0,0.00,0,0.00,0,0,0,0.00
+-,-,BORA-Hansgrohe,manager,BORA-Hansgrohe,9.8,0.00,0,0.00,0,0.00,0,0.00,0,0,0,0.00
+-,-,INEOS Grenadiers,manager,INEOS Grenadiers,9.5,0.00,0,0.00,0,0.00,0,0.00,0,0,0,0.00
+-,-,Soudal-Quick Step,manager,Soudal Quick-Step,9.1,0.00,0,0.00,0,0.00,0,0.00,0,0,0,0.00
+-,-,Movistar Team,manager,Movistar Team,8.8,0.00,0,0.00,0,0.00,0,0.00,0,0,0,0.00
+-,-,Lotto Dstny,manager,Lotto Dstny,7.8,0.00,0,0.00,0,0.00,0,0.00,0,0,0,0.00
+-,-,AG2R Citroen Team,manager,AG2R Citroën Team,7.6,0.00,0,0.00,0,0.00,0,0.00,0,0,0,0.00
+-,-,dsm-firmenich,manager,dsm-firmenich,7.5,0.00,0,0.00,0,0.00,0,0.00,0,0,0,0.00
+-,-,Lidl-Trek,manager,Lidl-Trek,7.3,0.00,0,0.00,0,0.00,0,0.00,0,0,0,0.00
+-,-,Astana Qazaqstan Team,manager,Astana Qazaqstan Team,7.2,0.00,0,0.00,0,0.00,0,0.00,0,0,0,0.00
+-,-,Bahrain-Victorious,manager,Bahrain - Victorious,7.1,0.00,0,0.00,0,0.00,0,0.00,0,0,0,0.00
+-,-,EF Education-EasyPost,manager,EF Education-EasyPost,6.8,0.00,0,0.00,0,0.00,0,0.00,0,0,0,0.00
+-,-,Intermarche-Circus-Wanty,manager,Intermarché - Circus - Wanty,6.2,0.00,0,0.00,0,0.00,0,0.00,0,0,0,0.00
+-,-,Team Arkea Samsic,manager,Team Arkea Samsic,5.6,0.00,0,0.00,0,0.00,0,0.00,0,0,0,0.00
+-,-,TotalEnergies,manager,TotalEnergies,5.4,0.00,0,0.00,0,0.00,0,0.00,0,0,0,0.00
+-,-,Uno-X Pro Cycling Team,manager,Uno-X Pro Cycling Team,5,0.00,0,0.00,0,0.00,0,0.00,0,0,0,0.00
+-,-,Sam Bennett,sprinter,BORA-Hansgrohe,10,0.00,0,0.00,0,0.00,0,0.00,0,0,0,0.00
+-,-,Sergio Higuita,climber,BORA-Hansgrohe,7.1,0.00,0,0.00,0,0.00,0,0.00,0,0,0,0.00
+-,-,Andrea Bagioli,youth,Soudal Quick-Step,6.8,0.00,0,0.00,0,0.00,0,0.00,0,0,0,0.00
+-,-,Bauke Mollema,climber,Lidl-Trek,6.7,0.00,0,0.00,0,0.00,0,0.00,0,0,0,0.00
+-,-,Greg Van Avermaet,support,AG2R Citroën Team,6,0.00,0,0.00,0,0.00,0,0.00,0,0,0,0.00
+-,-,Maciej Bodnar,tempo,TotalEnergies,5.8,0.00,0,0.00,0,0.00,0,0.00,0,0,0,0.00
+-,-,Dorian Godon,climber,AG2R Citroën Team,5.7,0.00,0,0.00,0,0.00,0,0.00,0,0,0,0.00
+-,-,Joe Dombrovski,climber,Astana Qazaqstan Team,5.7,0.00,0,0.00,0,0.00,0,0.00,0,0,0,0.00
+-,-,Benjamin Thomas,tempo,Cofidis,5.5,0.00,0,0.00,0,0.00,0,0.00,0,0,0,0.00
+-,-,Mauri Vansevenant,youth,Soudal Quick-Step,5.4,0.00,0,0.00,0,0.00,0,0.00,0,0,0,0.00
+-,-,Florian Sénéchal,support,Soudal Quick-Step,5.2,0.00,0,0.00,0,0.00,0,0.00,0,0,0,0.00
+-,-,Alexis Vuillermoz,support,TotalEnergies,4.9,0.00,0,0.00,0,0.00,0,0.00,0,0,0,0.00
+-,-,Samuele Battistella,youth,Astana Qazaqstan Team,4.7,0.00,0,0.00,0,0.00,0,0.00,0,0,0,0.00
+-,-,Mikkel Frølich Honore,support,EF Education-EasyPost,4.5,0.00,0,0.00,0,0.00,0,0.00,0,0,0,0.00
+-,-,Piet Allegaert,support,Cofidis,4.2,0.00,0,0.00,0,0.00,0,0.00,0,0,0,0.00
+-,-,Kamil Gradek,support,Bahrain - Victorious,4.2,0.00,0,0.00,0,0.00,0,0.00,0,0,0,0.00
+-,-,Élie Gesbert,support,Team Arkea Samsic,4.2,0.00,0,0.00,0,0.00,0,0.00,0,0,0,0.00
+-,-,Domen Novak,support,UAE Team Emirates,4,0.00,0,0.00,0,0.00,0,0.00,0,0,0,0.00
+-,-,Jorge Arcas,support,Movistar Team,3.8,0.00,0,0.00,0,0.00,0,0.00,0,0,0,0.00
+-,-,Pierre-Luc Perichon,support,Cofidis,3.5,0.00,0,0.00,0,0.00,0,0.00,0,0,0,0.00
+-,-,Dmitriy Gruzdev,support,Astana Qazaqstan Team,3.5,0.00,0,0.00,0,0.00,0,0.00,0,0,0,0.00

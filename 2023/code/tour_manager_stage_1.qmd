@@ -1,0 +1,83 @@
+---
+title: "Tourmanager - Stage 1"
+format: html
+editor: visual
+---
+
+#### Set env and clean data
+
+```{r}
+
+# Load packages
+
+library(dplyr)
+library(ggplot2)
+library(tibble)
+library(forcats)
+library(readr)
+
+# Set theme
+
+theme_set(theme_minimal())
+
+# Load data
+
+tdf_stage_1 <- read_csv("tour_manager_stage_1_2023.csv")
+
+# Clean data
+
+tdf_stage_1 <- tdf_stage_1 |> 
+  janitor::clean_names()
+
+tdf_stage_1 <- tdf_stage_1 |> 
+  mutate(position = as.factor(position))
+```
+
+#### Who got most points for their value on stage 1?
+
+```{r}
+
+tdf_stage_1_mvp <- tdf_stage_1 |> 
+  select(player, position, points, price, team) |> 
+  mutate(price_per_points = points / price) |> 
+  top_n(n = 20, wt = price_per_points)
+
+# Total points
+
+top_20_points <- tdf_stage_1_mvp |> 
+  ggplot(aes(x = points, y = fct_reorder(player, points))) +
+  geom_point() +
+  labs(x = "Poeng", y = "")
+
+# Price per million
+
+top_20_price_per_points <- tdf_stage_1_mvp |> 
+  ggplot(aes(x = price_per_points, y = fct_reorder(player, price_per_points))) +
+  geom_point() +
+  labs(x = "Poeng per million", y = "")
+
+# Combined plots
+
+combined_stage_1_mvp <- gridExtra::grid.arrange(top_20_points,
+                                                top_20_price_per_points, 
+                                                nrow = 1)
+
+ggsave("combined_stage_1_mvp.jpg", combined_stage_1_mvp, dpi = 300)
+
+
+# Which team dominated?
+
+tdf_stage_1_mvt <- tdf_stage_1 |>
+  select(team, points) |> 
+  group_by(team) |> 
+  summarize(team_points = sum(points)) |> 
+  top_n(n = 10, wt = team_points)
+
+team_points_sum <- tdf_stage_1_mvt |> 
+  summarize(team_points = sum(team_points)) |> 
+  pull(team_points)
+
+# Percentage of points taken by UAE
+
+1006/team_points_sum
+```

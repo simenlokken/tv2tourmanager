@@ -73,9 +73,9 @@ top_15_abs <- cleaned_data |>
   geom_point() +
   theme_minimal() +
   labs(
-    title = "Top 15 highest ranked players",
+    title = "Topp 15 høyest rangerte syklister",
     y = NULL,
-    x = "Points"
+    x = "Poeng"
   ) +
   scale_x_continuous(
     breaks = seq(1000, 2500, 250)
@@ -103,10 +103,10 @@ top_15_rel <- cleaned_data |>
   geom_point() +
   theme_minimal() +
   labs(
-    title = "Top 15 highest ranked players",
-    subtitle = "Points per price unit", 
+    title = "Topp 15 høyest rangerte syklister",
+    subtitle = "Poeng per prisenhet", 
     y = NULL,
-    x = "Points per price unit"
+    x = "Poeng per prisenhet"
   ) +
   scale_x_continuous(
     breaks = seq(150, 400, 50)
@@ -188,7 +188,7 @@ plot_top_15 <- function(
     ) +
     labs(
       title = {{ position }},
-      x = ifelse(absolute_points == FALSE, "Points", "Points per price unit"),
+      x = ifelse(absolute_points == FALSE, "Poeng", "Poeng per prisenhet"),
       y = NULL
     ) +
     scale_x_continuous(
@@ -196,6 +196,16 @@ plot_top_15 <- function(
     )
   return(plot)
 }
+
+sprinter <- mvp_abs |> 
+   plot_top_15(
+  position = "Sprinter",
+  x_axis = "points",
+  absolute_points = NULL,
+  x_start = 200,
+  x_end = 2500,
+  x_step = 200
+  )
 
 youth <- mvp_abs |> 
   plot_top_15(
@@ -253,8 +263,8 @@ support <- mvp_abs |>
     panel.grid.minor = element_blank()
   ) +
   labs(
-    title = "Support",
-    x = "Points",
+    title = "Hjelperytter",
+    x = "Poeng",
     y = NULL
   ) +
   xlim(400, 1250)
@@ -384,9 +394,9 @@ p1 <- cleaned_data |>
     breaks = seq(0, 1000, 100)
   ) +
   labs(
-    title = "Which manager should you use?",
-    subtitle = "Absolute points",
-    x = "Points",
+    title = "Hvilken sportsdirektør skal man velge?",
+    subtitle = "Absolutte poeng",
+    x = "Poeng",
     y = NULL
   )
 
@@ -412,9 +422,9 @@ p2 <- cleaned_data |>
     breaks = seq(0, 300, 20)
   ) +
   labs(
-    title = "Which manager should you use?",
-    subtitle = "Relative points, per price unit",
-    x = "Points per price unit",
+    title = "Hvilken sportsdirektør skal man velge?",
+    subtitle = "Poeng per prisenhet",
+    x = "Poeng per prisenhet",
     y = NULL
   )
 ```

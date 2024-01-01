@@ -1,0 +1,351 @@
+---
+title: "Tour Manager data from 2022"
+format:
+  html:
+    warning: false
+    message: false
+editor: visual
+---
+
+#### Information
+
+This code is related to the following Twitter threads and analyses from the 2022 version of the game:
+
+-   https://twitter.com/simenlokken/status/1674741906473902082
+
+-   https://twitter.com/simenlokken/status/1673399421285834776
+
+#### Set environment and clean data
+
+```{r}
+
+# Load packages
+
+library(dplyr)
+library(ggplot2)
+library(tibble)
+library(forcats)
+
+# Set theme
+
+theme_set(theme_minimal())
+
+# Load data
+
+tdf <- read.csv("tourmanager_after_finish_2022.csv")
+
+# Clean data
+
+tdf_cleaned <- tdf |> 
+  janitor::clean_names()
+
+tdf_cleaned <- tdf_cleaned |> 
+  mutate(position = as.factor(position))
+```
+
+#### Absolute amount of points
+
+```{r}
+
+absolute_points <- tdf_cleaned |> 
+  select(c(player, price, points)) |> 
+  slice_max(points, n = 30) |>
+  ggplot(aes(x = points, y = fct_reorder(player, points))) +
+  labs(y = "", x = "Poeng (absolutt)") +
+  geom_point()
+
+# ggsave("absolute_points.jpg", absolute_points, dpi = 300)
+```
+
+#### Relative amount of points per rider cost
+
+```{r}
+
+relative_points <- tdf_cleaned |> 
+  select(c(player, price, points)) |> 
+  slice_max(points, n = 30) |>
+  mutate(relative_points = points / price) |> 
+  ggplot(aes(x = relative_points, y = fct_reorder(player, relative_points))) +
+  labs(y = "", x = "Poeng (relativt)") +
+  geom_point()
+
+# ggsave("relative_points.jpg", relative_points, dpi = 300)
+```
+
+#### Absolute and relative points plotted together
+
+```{r}
+
+abs_rel_points <- gridExtra::grid.arrange(absolute_points, 
+                                          relative_points,
+                                          nrow = 1)
+
+# ggsave("abs_rel_points.jpg", abs_rel_points, dpi = 300, width = 7)
+```
+
+#### Ratio between absolute and relative points
+
+```{r}
+
+# Make datasets and merge
+
+df_absolute_points <- tdf_cleaned |> 
+  select(c(player, price, points)) |> 
+  slice_max(points, n = 30)
+
+df_relative_points <- relative_points <- tdf_cleaned |> 
+  select(c(player, price, points)) |> 
+  slice_max(points, n = 30) |> 
+  mutate(relative_points = round(points / price, 0))
+
+df_abs_rel_merged <- merge(df_absolute_points,
+                           df_relative_points,
+                           by = "player")
+
+# Plot
+
+df_abs_rel_merged <- df_abs_rel_merged |> 
+  mutate(ratio = relative_points / points.x)
+
+ratio_abs_rel_points <- df_abs_rel_merged |> 
+  ggplot(aes(x = ratio, y = fct_reorder(player, ratio))) +
+  geom_point() +
+  labs(x = "Ratio", y = "")
+
+# ggsave("ratio_abs_rel_points.jpg", ratio_abs_rel_points, dpi = 300)
+```
+
+#### Top 10 most valuable riders for each rider category
+
+```{r}
+
+# Create a dataframe with the 10 most valuable riders for each category
+    
+most_valuable_players_2022 <- tdf_cleaned |> 
+  select(c(player, position, points)) |>
+  group_by(position) |> 
+  top_n(n = 10, wt = points) |>
+  arrange(desc(position))
+
+# Most valuable youth rider
+
+youth <- most_valuable_players_2022 |> 
+  filter(position == "youth") |> 
+  ggplot(aes(x = points, y = fct_reorder(player, points))) +
+  geom_point() +
+  labs(subtitle = "Ungdomsrytter", y = "", x = "")
+
+# Most valuable climber
+
+climber <- most_valuable_players_2022 |> 
+  filter(position == "climber") |> 
+  ggplot(aes(x = points, y = fct_reorder(player, points))) +
+  geom_point() +
+  labs(subtitle = "Klatrer", y = "", x = "")
+
+# Most valuable tempo
+
+tempo <- most_valuable_players_2022 |> 
+  filter(position == "tempo") |> 
+  ggplot(aes(x = points, y = fct_reorder(player, points))) +
+  geom_point() +
+  labs(subtitle = "Tempo", y = "", x = "")
+
+# Most valuable captain
+
+captain <- most_valuable_players_2022 |> 
+  filter(position == "captain") |> 
+  ggplot(aes(x = points, y = fct_reorder(player, points))) +
+  geom_point() +
+  labs(subtitle = "Kaptein", y = "", x = "")
+
+# Most valuable support
+
+support <- most_valuable_players_2022 |> 
+  filter(position == "support") |> 
+  ggplot(aes(x = points, y = fct_reorder(player, points))) +
+  geom_point() +
+  labs(subtitle= "Hjelperytter", y = "", x = "Poeng")
+
+# Most valuable sprinter
+
+sprinter <- most_valuable_players_2022 |> 
+  filter(position == "sprinter") |> 
+  ggplot(aes(x = points, y = fct_reorder(player, points))) +
+  geom_point() +
+  labs(subtitle = "Spurter", y = "", x = "Poeng")
+
+most_val_each_cat <- gridExtra::grid.arrange(youth, climber, tempo, captain,
+                                             support, sprinter)
+
+# ggsave("most_val_each_cat.jpg", most_val_each_cat, dpi = 300, 
+       # width = 7, height = 7)
+```
+
+#### Top 10 most valuable riders for each rider category normalized for price
+
+```{r}
+
+# Filter out necessary data and create the points per price column
+
+most_valuable_players_2022 <- tdf_cleaned |> 
+  select(c(player, position, points, price)) |>
+  group_by(position) |> 
+  top_n(n = 10, wt = points) |>
+  arrange(desc(position)) |> 
+  mutate(points_normalized_price = round(points / price, 0))
+
+# Most valuable youth rider
+
+youth <- most_valuable_players_2022 |> 
+  filter(position == "youth") |> 
+  ggplot(aes(x = points_normalized_price, 
+             y = fct_reorder(player, points_normalized_price))) +
+  geom_point() +
+  labs(subtitle = "Ungdomsrytter", y = "", x = "")
+
+# Most valuable climber
+
+climber <- most_valuable_players_2022 |> 
+  filter(position == "climber") |> 
+  ggplot(aes(x = points_normalized_price, 
+             y = fct_reorder(player, points_normalized_price))) +
+  geom_point() +
+  labs(subtitle = "Klatrer", y = "", x = "")
+
+# Most valuable tempo
+
+tempo <- most_valuable_players_2022 |> 
+  filter(position == "tempo") |> 
+  ggplot(aes(x = points_normalized_price, 
+             y = fct_reorder(player, points_normalized_price))) +
+  geom_point() +
+  labs(subtitle = "Tempo", y = "", x = "")
+
+# Most valuable captain
+
+captain <- most_valuable_players_2022 |> 
+  filter(position == "captain") |> 
+  ggplot(aes(x = points_normalized_price, 
+             y = fct_reorder(player, points_normalized_price))) +
+  geom_point() +
+  labs(subtitle = "Kaptein", y = "", x = "")
+
+# Most valuable support
+
+support <- most_valuable_players_2022 |> 
+  filter(position == "support") |> 
+  ggplot(aes(x = points_normalized_price, 
+             y = fct_reorder(player, points_normalized_price))) +
+  geom_point() +
+  labs(subtitle= "Hjelperytter", y = "", x = "Poeng per million")
+
+# Most valuable sprinter
+
+sprinter <- most_valuable_players_2022 |> 
+  filter(position == "sprinter") |> 
+  ggplot(aes(x = points_normalized_price, 
+             y = fct_reorder(player, points_normalized_price))) +
+  geom_point() +
+  labs(subtitle = "Spurter", y = "", x = "Poeng per million")
+
+most_val_each_cat_normalized <- gridExtra::grid.arrange(youth, climber, 
+                                                        tempo, captain,
+                                                        support, sprinter)
+
+# ggsave("most_val_each_cat_normalized.jpg", most_val_each_cat_normalized, 
+       # dpi = 300, width = 7, height = 7) 
+```
+
+#### Which riders took the most points in a different category than their own + placement points?
+
+```{r}
+
+tdf |> view()
+
+# Clean names
+
+tdf_cleaned_2 <- tdf |> 
+  janitor::clean_names()
+
+# Select columns
+
+tdf_cleaned_2 <- tdf_cleaned_2 |> 
+  select(c(player, position, sprint_points, climb_points, placement_points))
+
+# Top 30 placement points
+
+top_30_placement_points <- tdf_cleaned_2 |> 
+  select(c(player, position, placement_points)) |>
+  top_n(n = 30, wt = placement_points) |> 
+  ggplot(aes(x = placement_points, y = fct_reorder(player,
+                                                   placement_points),
+             color = position)) +
+  geom_point() +
+  labs(title = "Antall plasseringspoeng",
+       x = "Poeng",
+       y = "") +
+  scale_color_brewer(palette = "Set1", name = "Rytterkategori",
+                     labels = c("Kaptein", "Klatrer", "Manager",
+                                "Spurter", "Hjelperytter",
+                                "Temporytter", "Ungdomsrytter"))
+
+tdf_cleaned_2 |> 
+  select(c(player, position, placement_points)) |>
+  top_n(n = 30, wt = placement_points) |> 
+  group_by(position) |> 
+  tally()
+
+# ggsave("top_30_placement_points.jpg", top_30_placement_points, dpi = 300) 
+
+# Climbing points from non-climbers
+
+climb_points_non_climbers <- tdf_cleaned_2 |>
+  select(player, position, climb_points) |>
+  filter(position != "climber") |>
+  top_n(n = 20, wt = climb_points) |>
+  ggplot(aes(x = climb_points, y = fct_reorder(player, climb_points),
+             color = position)) +
+  geom_point() +
+  labs(title = "Klatrepoeng for ikke-klatrere",
+       x = "Poeng",
+       y = "") +
+  scale_color_brewer(palette = "Set1", name = "Rytterkategori",
+                     labels = c("Kaptein", "Spurter", "Hjelperytter",
+                                "Temporytter", "Ungdomsrytter"))
+
+tdf_cleaned_2 |>
+  select(player, position, climb_points) |>
+  filter(position != "climber") |>
+  top_n(n = 20, wt = climb_points) |>
+  group_by(position) |> 
+  tally()
+
+# ggsave("climb_points_non_climbers.jpg", climb_points_non_climbers, dpi = 300)
+  
+
+# Sprint points from non-sprinters
+
+sprint_points_non_sprinters <- tdf_cleaned_2 |> 
+  select(player, position, sprint_points) |> 
+  filter(position != "sprinter") |>
+  top_n(n = 20, wt = sprint_points) |> 
+   ggplot(aes(x = sprint_points, y = fct_reorder(player, sprint_points),
+              color = position)) +
+  geom_point() +
+  labs(title = "Spurtpoeng for ikke-spurtere",
+       x = "Poeng",
+       y = "") +
+  scale_color_brewer(palette = "Set1", name = "Rytterkategori",
+                     labels = c("Klatrer", "Hjelperytter", "Temporytter",
+                                "Ungdomsrytter"))
+
+sprint_points_non_sprinters <- tdf_cleaned_2 |> 
+  select(player, position, sprint_points) |> 
+  filter(position != "sprinter") |>
+  top_n(n = 20, wt = sprint_points) |>
+  group_by(position) |> 
+  tally()
+
+# ggsave("sprint_points_non_sprinters.jpg", sprint_points_non_sprinters, dpi = 300)
+```

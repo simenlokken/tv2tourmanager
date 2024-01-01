@@ -1,0 +1,128 @@
+---
+title: "Tourmanager - manager choice"
+format:
+  html:
+    warning: false
+    message: false
+---
+
+#### Information
+
+This code to the following Twitter thread:
+
+-   https://twitter.com/simenlokken/status/1672554517638815745
+
+#### Set environment and clean data
+
+Data can be found on TV2's Tourmanager website under the Statistics page.
+
+```{r}
+
+# Load data and set environment
+
+library(dplyr)
+library(ggplot2)
+library(tibble)
+library(forcats)
+
+tdf <- read.csv("C:/Users/loekk/Downloads/tourmanager_before_start.csv")
+theme_set(theme_minimal())
+
+# Clean data
+
+tdf_cleaned <- tdf |> 
+  janitor::clean_names()
+
+# Change into factors
+
+tdf_cleaned <- tdf_cleaned |> 
+  select(c(player, position, team, price)) |> 
+  mutate(team = as.factor(team),
+         position = as.factor(position))
+```
+
+#### Which manager too choose?
+
+Mean price for each team
+
+```{r}
+
+# Mean team price
+
+mean_price_teams <-  tdf_cleaned |> 
+  group_by(team) |> 
+  summarize(mean_price = mean(price), sd_price = sd(price)) |>
+  ggplot(aes(x = fct_reorder(team, mean_price), y = mean_price)) +
+  geom_col() +
+  geom_errorbar(aes(ymin = mean_price - sd_price, ymax = mean_price + sd_price,
+                    width = 0.1)) +
+  coord_flip() +
+  labs(title = " Mean team price",
+       x = "", 
+       y = "Mean price")
+
+mean_price_teams
+```
+
+Manager price for each team
+
+```{r}
+
+mean_price_manager <- tdf_cleaned |> 
+  filter(position == "manager") |> 
+  group_by(team) |> 
+  ggplot(aes(x = fct_reorder(team, price), y = price)) + 
+  geom_col() +
+  coord_flip() +
+  labs(title = "Manager price", x = "", y = "Price")
+
+mean_price_manager
+```
+
+Combine mean team price and manager price in a single plot
+
+```{r}
+
+manager_team_plot <- gridExtra::grid.arrange(mean_price_teams,
+                                             mean_price_manager, 
+                                             nrow = 1)
+
+# ggsave("manager_team_plot.jpg", manager_team_plot, dpi = 300)
+```
+
+Ratio between manager price and mean team price
+
+```{r}
+
+# Create dataset for manager price and mean team price
+
+df_mean_team_price <- tdf_cleaned |> 
+  group_by(team) |> 
+  summarize(mean_price_team = mean(price))
+
+df_manager_price <- tdf_cleaned |> 
+  filter(position == "manager") |> 
+  group_by(team) |> 
+  summarize(price_manager = mean(price))
+
+# Merge datasets
+
+merged_df <- merge(df_manager_price, df_mean_team_price, by = "team")
+
+# Compute ratio
+
+merged_df <- merged_df |> 
+  mutate(ratio = price_manager / mean_price_team)
+
+# Plot
+
+team_ratio_plot <- merged_df |> 
+  ggplot(aes(fct_reorder(team, ratio, .desc = TRUE), ratio)) +
+  geom_col() +
+  coord_flip() +
+  labs(x = "", y = "Ratio")
+
+team_ratio_plot
+
+# ggsave("team_ratio_plot.jpg", team_ratio_plot, dpi = 300) #lol
+```

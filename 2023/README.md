@@ -5,4 +5,3 @@ Her ligger alt materialet for analysene til 2023-versjonen av spillet, og her er
 Valg av sportsdirektør: 
 
 https://twitter.com/simenlokken/status/1672554517638815745
-
